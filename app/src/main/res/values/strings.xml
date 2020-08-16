@@ -2,7 +2,6 @@
     <string name="app_name">UnitConverter</string>
     <string name="convertButtonText">Convert!</string>
     <string name="toText">to</string>
-    <string name="toConvertText">Number to convert</string>
     <string name="resultText">Result</string>
 
     <string-array name="categories">
@@ -17,7 +16,7 @@
         <item>Kilometre</item>
         <item>Metre</item>
         <item>Centimetre</item>
-        <item>Millimetres</item>
+        <item>Millimetre</item>
         <item>Mile</item>
         <item>Feet</item>
         <item>Inch</item>
@@ -51,7 +50,7 @@
         <item>Day</item>
         <item>Week</item>
         <item>Month</item>
-        <item>Calendar Year</item>
+        <item>Year</item>
     </string-array>
 
     <string-array name="temperature">
