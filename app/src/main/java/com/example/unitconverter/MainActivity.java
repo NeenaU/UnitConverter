@@ -37,14 +37,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         optionSpinner1 = (Spinner) findViewById(R.id.optionSpinner1);
         optionSpinner2 = (Spinner) findViewById(R.id.optionSpinner2);
 
-        initialNumber = findViewById(R.id.initialNumber);
-        number = Double.parseDouble(initialNumber.getText().toString());
-
         button = (Button) findViewById(R.id.convertButton);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getConversion(categorySpinner.getSelectedItem().toString(), optionSpinner1.getSelectedItem().toString(), optionSpinner1.getSelectedItem().toString(), number);
+                initialNumber = findViewById(R.id.initialNumber);
+                number = Double.parseDouble(initialNumber.getText().toString());
+                getConversion(categorySpinner.getSelectedItem().toString(), optionSpinner1.getSelectedItem().toString(), optionSpinner2.getSelectedItem().toString(), number);
             }
         });
     }
@@ -86,29 +85,34 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     private void getConversion(String category, String option1, String option2, double number) {
-        double result = 0;
+        double result = 0.0;
 
         UnitConverter converter = new UnitConverter();
 
-        if (category == "Length") {
+        if (category.equals("Length")) {
             result = converter.convertLength(option1, option2, number);
         }
-        else if (category == "Mass") {
+        else if (category.equals("Mass")) {
             result = converter.convertMass(option1, option2, number);
         }
-        else if (category == "Volume") {
+        else if (category.equals("Volume")) {
             result = converter.convertVolume(option1, option2, number);
         }
-        else if (category == "Time") {
+        else if (category.equals("Time")) {
             result = converter.convertTime(option1, option2, number);
         }
-        else if (category == "Temperature") {
+        else if (category.equals("Temperature")) {
             result = converter.convertTemp(option1, option2, number);
         }
 
-        //Display the result
         resultTextView = findViewById(R.id.resultTextView);
-        resultTextView.setText("" + result);
+        if (result % 1 == 0) {
+            int intResult = (int) result;
+            resultTextView.setText("" + intResult);
+        }
+        else {
+            resultTextView.setText("" + result);
+        }
 
     }
 }
