@@ -1,6 +1,7 @@
 package com.example.unitconverter;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -49,44 +50,133 @@ public class UnitConverter {
         put("Year",6);
     }};
 
-    Map<String, Integer> tempMap = new HashMap<String, Integer>() {{
-        put("Celsius",0);
-        put("Fahrenheit",1);
-    }};
-
-    ArrayList[][] lengthList = new ArrayList[8][8];
-
-    ArrayList[][] massList = new ArrayList[6][6];
-    ArrayList[][] volumeList = new ArrayList[8][8];
-    ArrayList[][] timeList = new ArrayList[7][7];
-    ArrayList[][] tempList = new ArrayList[2][2];
+    ArrayList<ArrayList<Double>> lengthList = new ArrayList<ArrayList<Double>>();
+    ArrayList<ArrayList<Double>> massList = new ArrayList<ArrayList<Double>>();
+    ArrayList<ArrayList<Double>> volumeList = new ArrayList<ArrayList<Double>>();
+    ArrayList<ArrayList<Double>> timeList = new ArrayList<ArrayList<Double>>();
 
     public UnitConverter() {
+
+        ArrayList<Double> km = (ArrayList<Double>) Arrays.asList(1.0, 1000.0, 100000.0, 1000000.0, 0.62150403977, 1094.0, 3281.0, 39370.0);
+        ArrayList<Double> m = (ArrayList<Double>) Arrays.asList(0.001, 1.0, 100.0, 1000.0, 0.00062150403, 1.094, 3.281, 39.37);
+        ArrayList<Double> cm = (ArrayList<Double>) Arrays.asList(0.00001, 0.01, 1.0, 10.0, 0.00000621372, 0.01093613298, 0.03280839895, 0.3937007874);
+        ArrayList<Double> mm = (ArrayList<Double>) Arrays.asList(0.000001, 0.001, 0.1, 1.0, 0.0000006213712121212, 0.0010940919, 0.00327868852, 0.03937007874);
+        ArrayList<Double> mile = (ArrayList<Double>) Arrays.asList(1.60934, 1609.0, 160934.0, 0.000001609, 1.0, 1760.0, 5280.0, 63360.0);
+        ArrayList<Double> yard = (ArrayList<Double>) Arrays.asList(0.0009144, 0.9144, 91.44, 914.4, 0.000568182, 1.0, 3.0, 36.0);
+        ArrayList<Double> foot = (ArrayList<Double>) Arrays.asList(0.0003048, 0.3048, 30.48, 304.8, 0.00018939393, 0.3333333333333, 1.0, 12.0);
+        ArrayList<Double> inch = (ArrayList<Double>) Arrays.asList(0.00002540005, 0.0254, 2.54, 25.4, 0.00001578282, 0.0277778, 0.0833334, 1.0);
+
+        lengthList.set(0, km);
+        lengthList.set(1, m);
+        lengthList.set(2, cm);
+        lengthList.set(3, mm);
+        lengthList.set(4, mile);
+        lengthList.set(5, yard);
+        lengthList.set(6, foot);
+        lengthList.set(7, inch);
+
+        ArrayList<Double> tonne = (ArrayList<Double>) Arrays.asList(1.0, 1000.0, 1000000.0, 157.0, 2205.0, 35274.0);
+        ArrayList<Double> kg = (ArrayList<Double>) Arrays.asList(0.001, 1.0, 1000.0, 0.15748031496, 2.205, 35.274);
+        ArrayList<Double> g = (ArrayList<Double>) Arrays.asList(0.000001, 0.001, 1.0, 0.00015748031, 0.00220264317, 0.0352733686);
+        ArrayList<Double> st = (ArrayList<Double>) Arrays.asList(0.00636942675, 6.35, 6350.0, 6350000.0, 1.0, 14.0, 224.0);
+        ArrayList<Double> lbs = (ArrayList<Double>) Arrays.asList(0.00045351473, 0.45351473922, 454.0, 0.07142857142, 1.0, 16.0);
+        ArrayList<Double> oz = (ArrayList<Double>) Arrays.asList(0.00002834949, 0.02834949254, 28.35, 0.00446428571, 0.0625, 1.0);
+
+        massList.set(0, tonne);
+        massList.set(1, kg);
+        massList.set(2, g);
+        massList.set(3, st);
+        massList.set(4, lbs);
+        massList.set(5, oz);
+
+        ArrayList<Double> l = (ArrayList<Double>) Arrays.asList(1.0, 1000.0, 0.21997360316, 0.87950747581, 1.76, 3.52, 35.195, 56.312, 169.0);
+        ArrayList<Double> ml = (ArrayList<Double>) Arrays.asList(0.001, 1.0, 0.0002199736, 0.00087950747, 0.00176056338, 0.00352112676, 0.03519515714, 0.05631264782, 0.16894745734);
+        ArrayList<Double> gallon = (ArrayList<Double>) Arrays.asList(4.546, 4546.0, 1.0, 4.0, 8.0, 16.0, 160.0, 256.0, 768.0);
+        ArrayList<Double> quart = (ArrayList<Double>) Arrays.asList(1.137, 1137.0, 0.25, 1.0, 2.0, 4.0, 40.0, 64.0, 192.0);
+        ArrayList<Double> pint = (ArrayList<Double>) Arrays.asList(0.56818181818, 568.0, 0.125, 0.5, 1.0, 2.0, 20.0, 32.0, 96.0);
+        ArrayList<Double> cup = (ArrayList<Double>) Arrays.asList(0.28409090909, 284.0, 0.0625, 0.25, 0.5, 1.0, 10.0, 16.0, 48.0);
+        ArrayList<Double> floz = (ArrayList<Double>) Arrays.asList(0.02841312686, 28.413, 0.00625, 0.025, 0.05, 0.1, 1.0, 1.6, 4.8);
+        ArrayList<Double> tbsp = (ArrayList<Double>) Arrays.asList(0.01775820429, 17.758, 0.00390625, 0.015625, 0.03125, 0.0625, 0.625, 1.0, 3.0);
+        ArrayList<Double> tsp = (ArrayList<Double>) Arrays.asList(0.00591715976, 5.919, 0.00130208333, 0.00520833333, 0.01041666666, 0.02083333333, 0.20833333333, 0.3333333333333);
+
+        volumeList.set(0, l);
+        volumeList.set(1, ml);
+        volumeList.set(2, gallon);
+        volumeList.set(3, quart);
+        volumeList.set(4, pint);
+        volumeList.set(5, cup);
+        volumeList.set(6, floz);
+        volumeList.set(7, tbsp);
+        volumeList.set(8, tsp);
+
+        ArrayList<Double> second = (ArrayList<Double>) Arrays.asList(1.0, 0.01666666666, 0.00027777777, 0.00001157407, 0.00000165343, 0.000002628, 0.0000003154);
+        ArrayList<Double> minute = (ArrayList<Double>) Arrays.asList(60.0, 1.0, 0.01666666666, 0.00069444444, 0.00009920634, 0.00002283105, 0.00000190258);
+        ArrayList<Double> hour = (ArrayList<Double>) Arrays.asList(3600.0, 60.0, 1.0, 0.04166666666, 0.00595238095, 0.00136986301, 0.00011415525);
+        ArrayList<Double> day = (ArrayList<Double>) Arrays.asList(86400.0, 1440.0, 24.0, 1.0, 0.14285714285, 0.03287635204, 0.00273972602);
+        ArrayList<Double> week = (ArrayList<Double>) Arrays.asList(604800.0, 10080.0, 168.0, 7.0, 1.0, 0.23014959723, 0.01917802964);
+        ArrayList<Double> month = (ArrayList<Double>) Arrays.asList(2628000.0, 43800.0, 730.0, 30.417, 4.345, 1.0, 0.08333333333);
+        ArrayList<Double> year = (ArrayList<Double>) Arrays.asList(31540000.0, 525600.0, 8760.0, 365.0, 52.143, 12.0, 1.0);
+
+        timeList.set(0, second);
+        timeList.set(1, minute);
+        timeList.set(2, hour);
+        timeList.set(3, day);
+        timeList.set(4, week);
+        timeList.set(5, month);
+        timeList.set(6, year);
 
     }
 
     public double convertLength(String option1, String option2, double number) {
         int length1 = lengthMap.get(option1);
         int length2 = lengthMap.get(option2);
+
+        double result = number * lengthList.get(length1).get(length2);
+        return result;
     }
 
     public double convertMass(String option1, String option2, double number) {
         int mass1 = massMap.get(option1);
         int mass2 = massMap.get(option2);
+
+        double result = number * massList.get(mass1).get(mass2);
+        return result;
     }
 
     public double convertVolume(String option1, String option2, double number) {
         int volume1 = volumeMap.get(option1);
         int volume2 = volumeMap.get(option2);
+
+        double result = number * volumeList.get(volume1).get(volume2);
+        return result;
     }
 
     public double convertTime(String option1, String option2, double number) {
         int time1 = timeMap.get(option1);
         int time2 = timeMap.get(option2);
+
+        double result = number * timeList.get(time1).get(time2);
+        return result;
     }
 
     public double convertTemp(String option1, String option2, double number) {
-        int temp1 = tempMap.get(option1);
-        int temp2 = tempMap.get(option2);
+        if (option1 == "Celsius") {
+            if (option2 == "Celsius") {
+                return number;
+            }
+            else {
+                return (double) number * (9/5) + 32;
+            }
+        }
+
+        else {
+            if (option2 == "Fahrenheit") {
+                return number;
+            }
+            else {
+                return (number - 32) * (5/9);
+            }
+        }
     }
+
 }
