@@ -1,6 +1,5 @@
 package com.example.unitconverter;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -9,7 +8,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-import java.util.*;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -23,54 +21,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private Button button;
     EditText initialNumber;
     TextView resultTextView;
-
-    //Hashmaps linking each unit in a category to a number
-    Map<String, Integer> lengthMap = new HashMap<String, Integer>() {{
-        put("Kilometre",0);
-        put("Metre",1);
-        put("Centimetre",2);
-        put("Millimetre",3);
-        put("Mile",4);
-        put("Yard",5);
-        put("Foot",6);
-        put("Inch",7);
-    }};
-
-    Map<String, Integer> massMap = new HashMap<String, Integer>() {{
-        put("Tonne",0);
-        put("Kilogram",1);
-        put("Gram",2);
-        put("Stone",3);
-        put("Pound",4);
-        put("Ounce",5);
-    }};
-
-    Map<String, Integer> volumeMap = new HashMap<String, Integer>() {{
-        put("Litre",0);
-        put("Millilitre",1);
-        put("Gallon",2);
-        put("Quart",3);
-        put("Pint",4);
-        put("Cup",5);
-        put("Fluid Ounce",6);
-        put("Tablespoon",7);
-        put("Teaspoon",7);
-    }};
-
-    Map<String, Integer> timeMap = new HashMap<String, Integer>() {{
-        put("Second",0);
-        put("Minute",1);
-        put("Hour",2);
-        put("Day",3);
-        put("Week",4);
-        put("Month",5);
-        put("Year",6);
-    }};
-
-    Map<String, Integer> tempMap = new HashMap<String, Integer>() {{
-        put("Celsius",0);
-        put("Fahrenheit",1);
-    }};
+    double number;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,11 +37,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         optionSpinner1 = (Spinner) findViewById(R.id.optionSpinner1);
         optionSpinner2 = (Spinner) findViewById(R.id.optionSpinner2);
 
+        initialNumber = findViewById(R.id.initialNumber);
+        number = Double.parseDouble(initialNumber.getText().toString());
+
         button = (Button) findViewById(R.id.convertButton);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                convert();
+                getConversion(categorySpinner.getSelectedItem().toString(), optionSpinner1.getSelectedItem().toString(), optionSpinner1.getSelectedItem().toString(), number);
             }
         });
     }
@@ -131,11 +85,26 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void onNothingSelected(AdapterView<?> parent) {
     }
 
-    private void convert() {
-        initialNumber = findViewById(R.id.initialNumber);
-        double number = Double.parseDouble(initialNumber.getText().toString());
-
+    private void getConversion(String category, String option1, String option2, double number) {
         double result = 0;
+
+        UnitConverter converter = new UnitConverter();
+
+        if (category == "Length") {
+            result = converter.convertLength(option1, option2, number);
+        }
+        else if (category == "Mass") {
+            result = converter.convertMass(option1, option2, number);
+        }
+        else if (category == "Volume") {
+            result = converter.convertVolume(option1, option2, number);
+        }
+        else if (category == "Time") {
+            result = converter.convertTime(option1, option2, number);
+        }
+        else if (category == "Temperature") {
+            result = converter.convertTemp(option1, option2, number);
+        }
 
         //Display the result
         resultTextView = findViewById(R.id.resultTextView);
