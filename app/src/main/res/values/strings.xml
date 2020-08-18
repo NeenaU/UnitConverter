@@ -18,6 +18,7 @@
         <item>Centimetre</item>
         <item>Millimetre</item>
         <item>Mile</item>
+        <item>Yard</item>
         <item>Feet</item>
         <item>Inch</item>
     </string-array>

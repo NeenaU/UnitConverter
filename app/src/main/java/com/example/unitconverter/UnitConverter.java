@@ -15,7 +15,7 @@ public class UnitConverter {
         put("Millimetre",3);
         put("Mile",4);
         put("Yard",5);
-        put("Foot",6);
+        put("Feet",6);
         put("Inch",7);
     }};
 
@@ -124,7 +124,6 @@ public class UnitConverter {
         timeList.add(week);
         timeList.add(month);
         timeList.add(year);
-
     }
 
     public double convertLength(String option1, String option2, double number) {
