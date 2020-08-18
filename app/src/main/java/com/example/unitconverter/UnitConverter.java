@@ -58,10 +58,10 @@ public class UnitConverter {
     public UnitConverter() {
 
         ArrayList<Double> km = new ArrayList<Double>(Arrays.asList(1.0, 1000.0, 100000.0, 1000000.0, 0.62150403977, 1093.6132983, 3280.839895, 39370.0787));
-        ArrayList<Double> m = new ArrayList<Double>(Arrays.asList(0.001, 1.0, 100.0, 1000.0, 0.00062150403, 1.094, 3.281, 39.37));
+        ArrayList<Double> m = new ArrayList<Double>(Arrays.asList(0.001, 1.0, 100.0, 1000.0, 0.00062150403, 1.0936, 3.281, 39.37));
         ArrayList<Double> cm = new ArrayList<Double>(Arrays.asList(0.00001, 0.01, 1.0, 10.0, 0.00000621372, 0.01093613298, 0.03280839895, 0.3937007874));
         ArrayList<Double> mm = new ArrayList<Double>(Arrays.asList(0.000001, 0.001, 0.1, 1.0, 0.0000006213712121212, 0.0010940919, 0.00327868852, 0.03937007874));
-        ArrayList<Double> mile = new ArrayList<Double>(Arrays.asList(1.60934, 1609.0, 160934.0, 0.000001609, 1.0, 1760.0, 5280.0, 63360.0));
+        ArrayList<Double> mile = new ArrayList<Double>(Arrays.asList(1.60934, 1609.344, 160934.4, 1609344.0, 1.0, 1760.0, 5280.0, 63360.0));
         ArrayList<Double> yard = new ArrayList<Double>(Arrays.asList(0.0009144, 0.9144, 91.44, 914.4, 0.000568182, 1.0, 3.0, 36.0));
         ArrayList<Double> foot = new ArrayList<Double>(Arrays.asList(0.0003048, 0.3048, 30.48, 304.8, 0.00018939393, 0.3333333333333, 1.0, 12.0));
         ArrayList<Double> inch = new ArrayList<Double>(Arrays.asList(0.00002540005, 0.0254, 2.54, 25.4, 0.00001578282, 0.0277778, 0.0833334, 1.0));
@@ -164,7 +164,8 @@ public class UnitConverter {
                 return number;
             }
             else {
-                return (double) number * (9/5) + 32;
+                double result = number * 9/5 + 32;
+                return result;
             }
         }
 
@@ -173,7 +174,8 @@ public class UnitConverter {
                 return number;
             }
             else {
-                return (number - 32) * (5/9);
+                double result = (number - 32) * (5/9);
+                return result;
             }
         }
     }
