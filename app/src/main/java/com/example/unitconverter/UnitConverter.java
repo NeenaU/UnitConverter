@@ -57,7 +57,7 @@ public class UnitConverter {
 
     public UnitConverter() {
 
-        ArrayList<Double> km = new ArrayList<Double>(Arrays.asList(1.0, 1000.0, 100000.0, 1000000.0, 0.62150403977, 1094.0, 3281.0, 39370.0));
+        ArrayList<Double> km = new ArrayList<Double>(Arrays.asList(1.0, 1000.0, 100000.0, 1000000.0, 0.62150403977, 1093.6132983, 3280.839895, 39370.0787));
         ArrayList<Double> m = new ArrayList<Double>(Arrays.asList(0.001, 1.0, 100.0, 1000.0, 0.00062150403, 1.094, 3.281, 39.37));
         ArrayList<Double> cm = new ArrayList<Double>(Arrays.asList(0.00001, 0.01, 1.0, 10.0, 0.00000621372, 0.01093613298, 0.03280839895, 0.3937007874));
         ArrayList<Double> mm = new ArrayList<Double>(Arrays.asList(0.000001, 0.001, 0.1, 1.0, 0.0000006213712121212, 0.0010940919, 0.00327868852, 0.03937007874));
