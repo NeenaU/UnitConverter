@@ -78,7 +78,7 @@ public class UnitConverter {
         ArrayList<Double> tonne = new ArrayList<Double>(Arrays.asList(1.0, 1000.0, 1000000.0, 157.0, 2205.0, 35274.0));
         ArrayList<Double> kg = new ArrayList<Double>(Arrays.asList(0.001, 1.0, 1000.0, 0.15748031496, 2.205, 35.274));
         ArrayList<Double> g = new ArrayList<Double>(Arrays.asList(0.000001, 0.001, 1.0, 0.00015748031, 0.00220264317, 0.0352733686));
-        ArrayList<Double> st = new ArrayList<Double>(Arrays.asList(0.00636942675, 6.35, 6350.0, 6350000.0, 1.0, 14.0, 224.0));
+        ArrayList<Double> st = new ArrayList<Double>(Arrays.asList(0.00636942675, 6.35, 6350.0, 1.0, 14.0, 224.0));
         ArrayList<Double> lbs = new ArrayList<Double>(Arrays.asList(0.00045351473, 0.45351473922, 454.0, 0.07142857142, 1.0, 16.0));
         ArrayList<Double> oz = new ArrayList<Double>(Arrays.asList(0.00002834949, 0.02834949254, 28.35, 0.00446428571, 0.0625, 1.0));
 
@@ -109,7 +109,7 @@ public class UnitConverter {
         volumeList.add(tbsp);
         volumeList.add(tsp);
 
-        ArrayList<Double> second = new ArrayList<Double>(Arrays.asList(1.0, 0.01666666666, 0.00027777777, 0.00001157407, 0.00000165343, 0.000002628, 0.0000003154));
+        ArrayList<Double> second = new ArrayList<Double>(Arrays.asList(1.0, 0.01666666666, 0.00027777777, 0.00001157407, 0.00000165343, 0.000000380517504, 0.0000000317057705));
         ArrayList<Double> minute = new ArrayList<Double>(Arrays.asList(60.0, 1.0, 0.01666666666, 0.00069444444, 0.00009920634, 0.00002283105, 0.00000190258));
         ArrayList<Double> hour = new ArrayList<Double>(Arrays.asList(3600.0, 60.0, 1.0, 0.04166666666, 0.00595238095, 0.00136986301, 0.00011415525));
         ArrayList<Double> day = new ArrayList<Double>(Arrays.asList(86400.0, 1440.0, 24.0, 1.0, 0.14285714285, 0.03287635204, 0.00273972602));

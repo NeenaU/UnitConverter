@@ -18,35 +18,35 @@ public class KGUnitConverterTest {
     @Test
     public void testMassKgToKg() {
         double result = unitConverter.convertMass("Kilogram", "Kilogram", 40.0);
-        assertEquals("Conversion from kg to m did not work", 40.0, result, 0.001);
+        assertEquals("Conversion from kg to kg did not work", 40.0, result, 0.001);
         //The message here is displayed if the test fails
     }
 
     @Test
     public void testMassKgToG() {
         double result = unitConverter.convertMass("Kilogram", "Gram", 40.0);
-        assertEquals("Conversion from kg to cm did not work", 40000, result, 0.001);
+        assertEquals("Conversion from kg to g did not work", 40000, result, 0.001);
         //The message here is displayed if the test fails
     }
 
     @Test
     public void testMassKgToStone() {
         double result = unitConverter.convertMass("Kilogram", "Stone", 40.0);
-        assertEquals("Conversion from kg to mm did not work", 6.29892, result, 0.001);
+        assertEquals("Conversion from kg to stone did not work", 6.29892, result, 0.001);
         //The message here is displayed if the test fails
     }
 
     @Test
     public void testMassKgToPound() {
         double result = unitConverter.convertMass("Kilogram", "Pound", 40.0);
-        assertEquals("Conversion from kg to mile did not work", 88.2, result, 0.001);
+        assertEquals("Conversion from kg to pound did not work", 88.2, result, 0.001);
         //The message here is displayed if the test fails
     }
 
     @Test
     public void testMassKgToOunce() {
         double result = unitConverter.convertMass("Kilogram", "Ounce", 40.0);
-        assertEquals("Conversion from kg to yard did not work", 1410.96, result, 0.001);
+        assertEquals("Conversion from kg to ounce did not work", 1410.96, result, 0.001);
         //The message here is displayed if the test fails
     }
 }
