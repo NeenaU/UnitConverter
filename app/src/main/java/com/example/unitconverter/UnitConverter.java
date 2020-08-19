@@ -174,7 +174,7 @@ public class UnitConverter {
                 return number;
             }
             else {
-                double result = (number - 32) * (5/9);
+                double result = (number - 32) * 5/9;
                 return result;
             }
         }

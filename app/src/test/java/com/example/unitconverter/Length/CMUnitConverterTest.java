@@ -1,7 +1,8 @@
-package com.example.unitconverter;
+package com.example.unitconverter.Length;
 
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import com.example.unitconverter.UnitConverter;
 
 public class CMUnitConverterTest {
 
@@ -30,8 +31,8 @@ public class CMUnitConverterTest {
 
     @Test
     public void testLengthCmToMm() {
-        double result = unitConverter.convertLength("Centimetre", "Millimetre", 4.0);
-        assertEquals("Conversion from cm to mm did not work", 40.0, result, 0.001);
+        double result = unitConverter.convertLength("Centimetre", "Millimetre", 4.5);
+        assertEquals("Conversion from cm to mm did not work", 45.0, result, 0.001);
         //The message here is displayed if the test fails
     }
 

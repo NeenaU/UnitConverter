@@ -1,7 +1,8 @@
-package com.example.unitconverter;
+package com.example.unitconverter.Length;
 
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import com.example.unitconverter.UnitConverter;
 
 public class MileUnitConverterTest {
 
