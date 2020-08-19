@@ -37,7 +37,7 @@ public class UnitConverter {
         put("Cup",5);
         put("Fluid Ounce",6);
         put("Tablespoon",7);
-        put("Teaspoon",7);
+        put("Teaspoon",8);
     }};
 
     Map<String, Integer> timeMap = new HashMap<String, Integer>() {{
@@ -97,7 +97,7 @@ public class UnitConverter {
         ArrayList<Double> cup = new ArrayList<Double>(Arrays.asList(0.28409090909, 284.0, 0.0625, 0.25, 0.5, 1.0, 10.0, 16.0, 48.0));
         ArrayList<Double> floz = new ArrayList<Double>(Arrays.asList(0.02841312686, 28.413, 0.00625, 0.025, 0.05, 0.1, 1.0, 1.6, 4.8));
         ArrayList<Double> tbsp = new ArrayList<Double>(Arrays.asList(0.01775820429, 17.758, 0.00390625, 0.015625, 0.03125, 0.0625, 0.625, 1.0, 3.0));
-        ArrayList<Double> tsp = new ArrayList<Double>(Arrays.asList(0.00591715976, 5.919, 0.00130208333, 0.00520833333, 0.01041666666, 0.02083333333, 0.20833333333, 0.3333333333333));
+        ArrayList<Double> tsp = new ArrayList<Double>(Arrays.asList(0.00591715976, 5.919, 0.00130208333, 0.00520833333, 0.01041666666, 0.02083333333, 0.20833333333, 0.3333333333333, 1.0));
 
         volumeList.add(l);
         volumeList.add(ml);
